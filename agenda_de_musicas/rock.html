@@ -1,0 +1,111 @@
+﻿ 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Agenda</title>
+<STYLE>
+BODY {
+         background-image: url("clarion.jpg");
+         background-repeat: no-repeat;
+         background-position: center;
+         background-attachment: fixed;
+		 background-position: 26% 58%;
+		 font-family: Verdana;
+		 }
+
+ P {font-family: Verdana; font-size: 95%; text-align: justify}
+   P:first-letter {font-size: 200%; text-transform: uppercase}
+   .Diferente:first-letter {font-size: 300%; text-transform: uppercase; float:left;
+                            font-weight: bold; color: red}
+ 
+
+
+
+  
+   A {text-decoration: none}
+   A:HOVER {background-color: red}
+   
+   div.p1 {
+ height: 178.5px;
+ width:  803px;
+ border: solid;
+ border-width: 7px
+ 
+}
+#div_p2
+{
+ height: 400px;
+ width:  803px;
+ border: solid;
+ border-width: 7px
+ }
+    
+ #hr_tipo1{ border: 1px solid; 
+	border-color: black;
+	border: 4px solid;}
+ 
+</STYLE>
+</head>
+<script language= "JavaScript">
+function escolher(){
+var a=eval(document.formcalc.t1.value);
+var recebe=  eval(document.form_rock.tipo_de_rock) ;
+
+ 
+ 
+if (recebe == 2)
+{
+alert("O Resultado da operação é -> "+recebe);
+top.location  = "rocknacional.html";
+
+ 
+}
+else if (recebe == 3)
+{
+alert("O Resultado da operação é -> "+recebe);
+top.location  = "rockinternacional.html";
+ 
+}
+</script>
+<body>
+<div class="p1">
+	<img src="logo.gif">
+</div>
+
+ 
+<br>
+<div id="div_p2">
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="index.html">Home</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="forro.html">Letras de Forró</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="samba.html">Letras de Samba</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="pop.html">Letras de pop</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="rock.html">Rock´s</A>
+   
+ 
+
+<p>
+<hr id="hr_tipo1"> 
+<form id="form_agenda" name="form_rock" method="get" action="">
+	 <b>Escolha o tipo de consulta:</b>
+	 
+	<select name="tipo_de_rock" >
+	<option  value=1> Escolha o Tipo de Rock</option>
+	<option  value=2> Rock´s Nacionais</option>
+	<option  value=3> Rock´s Internacionais</option>
+ 	
+	</select>
+ 
+	<input type="submit" name="rocks" id="rocks"   onclick="escolher()" >
+</form>
+</P>
+
+</div>
+</body>
+</html>
+
+ 

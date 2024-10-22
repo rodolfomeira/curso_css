@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+* {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #37373b;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 26% 58%;
+    font-family: 'Archivo', sans-serif;
+    font-size: 17px;
+    color: white;
+}
+
+.logo {
+    padding: 3px;
+    height: 75px;
+    margin: -3px 30px;
+}
+
+.menu {
+    width: 100%;
+    height: 75px;
+    background-color: #5153E0;
+    box-shadow: 5px 20px 20px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+}
+
+ul li {
+    display: inline-block;
+    line-height: 75px;
+}
+
+ul li a {
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 23px;
+    letter-spacing: 1pt;
+    margin: 0 10px;
+    padding: 23px;
+}
+
+.ativo {
+    background-color: white;
+    color: #5153E0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #2f307c;
+    color: white;
+}
+
+.filme {
+    margin: 2% 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.poster {
+    width: 230px;
+    object-fit: cover;
+    margin: auto 0;
+}
+
+.sinopse {
+    width: 700px;
+    margin: auto 0;
+    padding: 20px;
+    letter-spacing: 0.2pt;
+    text-align: justify;
+}
+
+h2 {
+    padding: 15px 0;
+}
+
+
+
+p:first-letter {
+    font-size: 200%; 
+    text-transform: uppercase;
+}
+
+iframe {
+    margin: auto 0;
+}
+
+hr {
+    margin: -20px auto;
+    width: 78%;
+}
+
+.Diferente:first-letter {
+    font-size: 300%; 
+    text-transform: uppercase; 
+    float:left;
+    font-weight: bold; 
+    color: rgb(0, 0, 0);
+    font: bold; 
+}
+.imagemdogrupo{
+    
+    width: 700px;
+    height: auto;
+    text-align: center;
+    font-family: 'Times New';
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: large;
+}
+
+/*
+
+
+
+*/

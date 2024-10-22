@@ -1,0 +1,164 @@
+﻿<?php
+error_reporting(0);
+ini_set(“display_errors”, 0 );
+?>
+ 
+<?php
+require_once('conectarbanco.php');
+
+
+$query_select_gerente="SELECT * FROM gerente order by nomegerente ASC";
+$sql_select_gerente=mysql_query($query_select_gerente);
+if($sql_select_gerente == false)
+	{
+	echo "FALHA AO CONSULTAR A TABELA";
+	exit;
+	}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Agenda</title>
+<STYLE>
+BODY {
+         background-image: url("clipartagenda.jpg");
+         background-repeat: no-repeat;
+         background-position: center;
+         background-attachment: fixed;
+		 background-position: 25% 71%
+		 }
+
+ P {font-family: Verdana; font-size: 95%; text-align: justify}
+   P:first-letter {font-size: 200%; text-transform: uppercase}
+   .Diferente:first-letter {font-size: 300%; text-transform: uppercase; float:left;
+                            font-weight: bold; color: red}
+ 
+
+
+
+  BODY {font-family: Verdana}
+   A {text-decoration: none}
+   A:HOVER {background-color: red}
+   
+   div.p1 {
+ height: 178.5px;
+ width:  803px;
+ border: solid;
+ border-width: 7px
+ 
+}
+div.p2
+{
+ height: 400px;
+ width:  803px;
+ border: solid;
+ border-width: 7px
+ }
+    
+ hr.tipo1{ border: 1px solid; 
+	border-color: black;
+	border: 4px solid;}
+ div.listarbig 
+	   {
+		width:788px;
+		height:290px;
+		overflow: auto;
+
+		}
+ 
+</STYLE>
+</head>
+
+<body>
+<div class="p1">
+	<img src="logo.gif">
+</div>
+
+ 
+<br>
+<div class="p2">
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="index.php">Home</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="gerente.php">Cadastro de Gerente</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="vendedor.php">Cadastro de Vendedor</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="agenda.php">Agendamento</A> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A HREF="consulta.php">Consultas</A> 
+ 
+
+<p>
+<hr class="tipo1"> 
+<form id="form_agenda" name="form_agenda" method="get" action="">
+	 <b>Escolha o tipo de consulta:</b>
+	<select name="consulta" >
+	<option  value="a"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+	<option  value="b"> Por ordem de Gerente</option>
+	<option  value="c"> Por ordem de Vendedor</option>
+	
+	</select>
+	<input type="submit" name="consultando" id="consultando" value="Aplicar consulta" />
+</form>
+</P>  <font color ="red">
+ <b> Por ordem de Gerente</b><br>
+<div class="listarbig">
+<table width="200" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>Nome:</td>
+    <td>Telefone:</td>
+    <td>Celular</td>
+    <td>Email</td>
+   
+    </tr>
+<?php  
+if(mysql_num_rows($sql_select_gerente) > 0)
+{
+   while($array_select_gerente=mysql_fetch_array($sql_select_gerente))
+	{
+		$id_gerente=$array_select_gerente["codgerente"];
+		$nome=$array_select_gerente["nomegerente"];
+		$telefone=$array_select_gerente["fonegerente"];
+		$cel=$array_select_gerente["celgerente"];
+		$email=$array_select_gerente["emailgerente"];
+		
+				
+
+ echo
+ " <tr>
+    <td>$nome</td>
+    <td>$telefone</td>
+    <td>$cel</td>
+    <td>$email</td>
+	
+  </tr>
+  ";
+	}
+  
+}
+?>
+</div>
+</table>
+
+</div>
+
+</div>
+</body>
+</html>
+<?php  
+if(isset($_GET["consultando"])) 
+{    
+	 $consulta=$_GET["consulta"];
+	 ECHO $consulta;
+	if($consulta =="b")
+			     
+			     header("Location:cons1.php");
+				 
+	else	if($consulta =="c")		
+ 			    
+		         header("Location:cons2.php");
+
+  
+
+}
+?>
